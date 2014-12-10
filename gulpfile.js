@@ -4,16 +4,16 @@ var prettify = require('gulp-html-prettify');
 var runSequence = require('run-sequence');
 
 var config = {
-  'source': './public/www/**',
-  'sourceHTML': './public/www/*.html',
+  'source': './www/**',
+  'sourceHTML': './www/*.html',
   'dist': './dist/',
   'distHTML': './dist/',
   'bsLESS': './bower/bootstrap/less/**',
   'bsJS': './bower/bootstrap/dist/js/bootstrap.js',
   'bsJSmin': './bower/bootstrap/dist/js/bootstrap.min.js',
   'bsJQUERY': './bower/jquery/dist/**',
-  'publicLESS': './public/css/_bs/',
-  'publicJS': './public/js/'
+  'publicLESS': './css/_bs/',
+  'publicJS': './js/'
 }
 
 gulp.task('bs', function() {
@@ -41,7 +41,7 @@ gulp.task('pretty', function() {
   .pipe(gulp.dest(config.distHTML))
 });
 
-gulp.task('init', function() {
+gulp.task('dist', function() {
   runSequence(
     'copy',
     'pretty'
@@ -52,4 +52,4 @@ gulp.task('watch', function() {
   gulp.watch(config.sourceHTML, ['pretty']);
 });
 
-gulp.task('default', ['init', 'watch']);
+gulp.task('default', ['dist', 'watch']);
