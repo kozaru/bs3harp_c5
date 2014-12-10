@@ -1,7 +1,11 @@
 .container
 	.starter-template
-		h1= pagename
+		h1 Start
 		p.lead
 			| test Use this document as a way to quickly start any new project.
 			br
 			| All you get is this text and a mostly barebones HTML document.
+		ul
+			for article, slug in public.html._data
+				li
+					a(href="html/#{ slug }.html")= article.pagename

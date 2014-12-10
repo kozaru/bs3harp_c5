@@ -4,10 +4,14 @@ var prettify = require('gulp-html-prettify');
 var runSequence = require('run-sequence');
 
 var config = {
-  'source': './www/**',
-  'sourceHTML': './www/*.html',
-  'dist': './dist/',
-  'distHTML': './dist/',
+  'sourceMinify': './www/html/',
+  'sourceMinifyHTML': './www/html/*.html',
+  'sourceHTML': './www/html/**',
+  'sourceCSS': './www/css/**',
+  'sourceJS': './www/js/**',
+  'distHTML': '../html/',
+  'distCSS': '../css/',
+  'distJS': '../js/',
   'bsLESS': './bower/bootstrap/less/**',
   'bsJS': './bower/bootstrap/dist/js/bootstrap.js',
   'bsJSmin': './bower/bootstrap/dist/js/bootstrap.min.js',
@@ -28,23 +32,27 @@ gulp.task('bs', function() {
 });
 
 gulp.task('copy', function() {
-  return gulp.src(config.source)
-  .pipe(gulp.dest(config.dist));
+  gulp.src(config.sourceHTML)
+  .pipe(gulp.dest(config.distHTML));
+  gulp.src(config.sourceCSS)
+  .pipe(gulp.dest(config.distCSS));
+  gulp.src(config.sourceJS)
+  .pipe(gulp.dest(config.distJS));
 });
 
 gulp.task('pretty', function() {
-  return gulp.src(config.sourceHTML)
+  return gulp.src(config.sourceMinifyHTML)
   .pipe(prettify({
     indent_char: ' ',
     indent_size: 2
   }))
-  .pipe(gulp.dest(config.distHTML))
+  .pipe(gulp.dest(config.sourceMinify))
 });
 
 gulp.task('dist', function() {
   runSequence(
-    'copy',
-    'pretty'
+    'pretty',
+    'copy'
     );
 });
 
