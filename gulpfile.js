@@ -18,10 +18,12 @@ var config = {
   'sourceIMG': './www/images/**',
   'distHTML': '../',
   'distCSS': '../css/',
-  'distLESS': '../gulpless/_less/',
+  // 'distLESS': '../gulpless/_less/',
   'distJS': '../js/',
   'distIMG': '../images/',
   'bsLESS': './bower/bootstrap/less/**',
+  'bsLESSbootstrap': './bower/bootstrap/less/bootstrap.less',
+  'bsLESSvareables': './bower/bootstrap/less/vareables.less',
   'bsJS': './bower/bootstrap/dist/js/bootstrap.js',
   'bsJSmin': './bower/bootstrap/dist/js/bootstrap.min.js',
   'bsJQUERY': './bower/jquery/jquery.min.js',
@@ -67,10 +69,21 @@ gulp.task('copycss', function() {
   .pipe(gulp.dest(config.distCSS));
 });
 
-gulp.task('copyless', function() {
-  return gulp.src(config.sourceLESS)
-  .pipe(gulp.dest(config.distLESS));
+// gulp.task('copyless', function() {
+//   return gulp.src(config.sourceLESS)
+//   .pipe(gulp.dest(config.distLESS));
+// });
+
+gulp.task('copybootstrapcss', function() {
+  return gulp.src(config.bsLESSbootstrap)
+  .pipe(gulp.dest(config.sourceLESS));
 });
+
+gulp.task('copyvariablescss', function() {
+  return gulp.src(config.bsLESSvariables)
+  .pipe(gulp.dest(config.sourceLESS));
+});
+
 
 gulp.task('copyjs', function() {
   return gulp.src(config.sourceJS)
@@ -90,7 +103,7 @@ gulp.task('copy', function() {
   runSequence(
     'copyhtml',
     'copycss',
-    'copyless',
+    // 'copyless',
     'copyjs',
     'copyimg'
     );

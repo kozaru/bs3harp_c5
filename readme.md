@@ -12,6 +12,10 @@ harpJS + browser-sync + gulp + Bootstrap3 for concrete5.6.x coding with jquery1.
 $ npm install
 ```
 
+#### change bootstrap version
+
+"postinstall": "bower install bootstrap#3.1.1 && bower install jquery#1.7.2 && gulp bs"
+
 ### Run server with Livereload
 
 /Bs3harp
