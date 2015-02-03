@@ -45,10 +45,28 @@ $ harp compile; gulp dist
 ```
 
 ## Chagelog
+### ver 1.0.1
+- Add index for coding page list
+
+- Change directories for compile and copy
+
+	- harp compile html
+	/dist/**.html
+
+	- harp compile css/js/images
+	/dist/[css/js/images]
+
+	- gulp copy compile html
+	/**.html
+
+	- gulp copy compile css/js/images
+	/[css/js/images]
+
 
 ### ver 1.0.0
-harp compile html/css/js/images
+
+- harp compile html/css/js/images
 /dist/[html/css/js/images]
 
-gulp copy compile sources
+- gulp copy compile sources
 ../[html/css/js/images]

@@ -1,11 +1,10 @@
 .container
 	.starter-template
-		h1 Start
-		p.lead
-			| Use this document as a way to quickly start any new project.
-			br
-			| All you get is this text and a mostly barebones HTML document.
+		h1= pagename
+		h2 Page List
 		ul
 			for article, slug in public.html._data
 				li
-					a(href="html/#{ slug }.html")= article.pagename
+					a(href="html/#{ slug }.html")
+						= article.pagename
+

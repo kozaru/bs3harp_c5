@@ -7,16 +7,16 @@ var runSequence = require('run-sequence');
 var cssbeautify = require('gulp-cssbeautify');
 
 var config = {
-  'sourceMinify': './www/html/',
-  'sourceMinifyHTML': './www/html/*.html',
-  'sourceHTML': './www/html/**',
+  'sourceMinify': './www/',
+  'sourceMinifyHTML': './www/*.html',
+  'sourceHTML': './www/**',
   // 'sourcePrettify': './www/css/',
   // 'sourcePrettifyCSS': './www/css/content.css',
   'sourceCSS': './www/css/**',
   'sourceLESS': './public/css/**',
   'sourceJS': './www/js/**',
   'sourceIMG': './www/images/**',
-  'distHTML': '../html/',
+  'distHTML': '../',
   'distCSS': '../css/',
   'distLESS': '../gulpless/_less/',
   'distJS': '../js/',
