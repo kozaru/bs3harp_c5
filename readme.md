@@ -1,6 +1,6 @@
 # Bs3harp
 
-harpJS + browser-sync + gulp + Bootstrap3
+harpJS + browser-sync + gulp + Bootstrap3 for concrete5.6 with jquery1.7.2
 
 ## Usage
 
@@ -45,3 +45,4 @@ $ harp compile; gulp dist
 ```
 
 ## Chagelog
+
