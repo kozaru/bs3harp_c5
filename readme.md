@@ -1,6 +1,6 @@
 # Bs3harp
 
-harpJS + browser-sync + gulp + Bootstrap3 for concrete5.6 with jquery1.7.2
+harpJS + browser-sync + gulp + Bootstrap3 for concrete5.6.x coding with jquery1.7.2
 
 ## Usage
 
@@ -50,5 +50,5 @@ $ harp compile; gulp dist
 harp compile html/css/js/images
 /dist/[html/css/js/images]
 
-gulp copy compile source
+gulp copy compile sources
 ../[html/css/js/images]
