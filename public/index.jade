@@ -1,11 +1,12 @@
 .container
-	h1= pagename
-	h2 Page List
-	.well
-		ul
-			for article, slug in public._data
-				li
-					a(href="#{ slug }.html")
-						= article.pagename
+	.starter-template
+		h1= pagename
+		h2 Page List
+		.well
+			ul
+				for article, slug in public._data
+					li
+						a(href="#{ slug }.html")
+							= article.pagename
 
 

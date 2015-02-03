@@ -22,8 +22,6 @@ var config = {
   'distJS': '../js/',
   'distIMG': '../images/',
   'bsLESS': './bower/bootstrap/less/**',
-  'bsLESSbootstrap': './bower/bootstrap/less/bootstrap.less',
-  'bsLESSvareables': './bower/bootstrap/less/vareables.less',
   'bsJS': './bower/bootstrap/dist/js/bootstrap.js',
   'bsJSmin': './bower/bootstrap/dist/js/bootstrap.min.js',
   'bsJQUERY': './bower/jquery/jquery.min.js',
@@ -41,10 +39,10 @@ gulp.task('bsjs', function() {
   .pipe(gulp.dest(config.publicJS));
 });
 
-gulp.task('bsjsmin', function() {
-  return gulp.src(config.bsJSmin)
-  .pipe(gulp.dest(config.publicJS));
-});
+// gulp.task('bsjsmin', function() {
+//   return gulp.src(config.bsJSmin)
+//   .pipe(gulp.dest(config.publicJS));
+// });
 
 gulp.task('bsjquery', function() {
   return gulp.src(config.bsJQUERY)
@@ -55,6 +53,7 @@ gulp.task('bs', function() {
   runSequence(
     'bsless',
     'bsjs',
+    // 'bsjsmin',
     'bsjquery'
     );
 });
@@ -73,17 +72,6 @@ gulp.task('copycss', function() {
 //   return gulp.src(config.sourceLESS)
 //   .pipe(gulp.dest(config.distLESS));
 // });
-
-gulp.task('copybootstrapcss', function() {
-  return gulp.src(config.bsLESSbootstrap)
-  .pipe(gulp.dest(config.sourceLESS));
-});
-
-gulp.task('copyvariablescss', function() {
-  return gulp.src(config.bsLESSvariables)
-  .pipe(gulp.dest(config.sourceLESS));
-});
-
 
 gulp.task('copyjs', function() {
   return gulp.src(config.sourceJS)
