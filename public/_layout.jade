@@ -17,7 +17,7 @@ html
 						a.navbar-brand(href="index.html")= sitetitle
 					.collapse.navbar-collapse
 						ul.nav.navbar-nav
-							for article, slug in public.html._data
+							for article, slug in public._data
 								li
 									a(href="#{ slug }.html")= article.pagename
 		!= yield
