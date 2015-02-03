@@ -39,10 +39,10 @@ gulp.task('bsjs', function() {
   .pipe(gulp.dest(config.publicJS));
 });
 
-// gulp.task('bsjsmin', function() {
-//   return gulp.src(config.bsJSmin)
-//   .pipe(gulp.dest(config.publicJS));
-// });
+gulp.task('bsjsmin', function() {
+  return gulp.src(config.bsJSmin)
+  .pipe(gulp.dest(config.publicJS));
+});
 
 gulp.task('bsjquery', function() {
   return gulp.src(config.bsJQUERY)
@@ -53,7 +53,7 @@ gulp.task('bs', function() {
   runSequence(
     'bsless',
     'bsjs',
-    // 'bsjsmin',
+    'bsjsmin',
     'bsjquery'
     );
 });
