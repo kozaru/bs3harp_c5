@@ -26,9 +26,9 @@ $ harp server
 $ npm start
 ```
 
-### Compile source 
+### Compile source
 
-Compile source in /Bs3harp/public/www 
+Compile source in /Bs3harp/public/www
 
 /Bs3harp
 
@@ -46,3 +46,9 @@ $ harp compile; gulp dist
 
 ## Chagelog
 
+### ver 1.0.0
+harp compile html/css/js/images
+/dist/[html/css/js/images]
+
+gulp copy compile source
+../[html/css/js/images]
